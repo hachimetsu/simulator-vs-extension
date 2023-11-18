@@ -1,71 +1,62 @@
-# simulator README
+# Welcome to My VS Code Extension Repo
 
-This is the README for your extension "simulator". After writing up a brief description, we recommend including the following sections.
+## What's Here
+ 
+* VS Code Extension: `Simulator`
+* `Simulator` - Mimic Output of code manly C for now into virtual Terminal
+  * Extension Provite option as `Mimic Output` in `Context Menu` of VS.
+* `src` - main folder
+  * contain 2 folders as
+    * `extension`: main.ts file of extension
+    * `webview`: main.tsx file of webview
+  * `webview` - use `React` + `Tailwind`
+* `extension` is build by `webpack`
+* and `webview` is build by `Vite`
+* `media` folder contains `assets` which will be use by `extension` and out file of webview as `main.js`+`style.css`
 
-## Features
+## Setup
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+* Run Following Commands to start
+* `npm i` : install packages
+* `npm run build` : generate `dist` for `extension` and `media/webview` for webview
 
-For example if there is an image subfolder under your extension project workspace:
+
+## Get up and running straight away
+
+* Press `F5` to open a new window with your extension loaded.
+* Run your command from the command palette by pressing (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and typing `Simulator`.
+* You will found all avialable command as `Simulator` with `prefix` in `palette`
+* Set breakpoints in your code inside `src/extension/main.ts` to debug your extension.
+* Find output from your extension in the debug console.
+
+## Make changes
+* for web view use `src/webview/App.tsx` and `Tailwind` or `src/webview/Style.css` 
+* You can relaunch the extension from the debug toolbar after changing code in `src/extension/main.ts`.
+* You can also reload (`Ctrl+R` or `Cmd+R` on Mac) the VS Code window with your extension to load your changes.
+
+
+## Explore the API
+
+* You can open the full set of our API when you open the file `node_modules/@types/vscode/index.d.ts`.
+
+## Run tests
+
+* Open the debug viewlet (`Ctrl+Shift+D` or `Cmd+Shift+D` on Mac) and from the launch configuration dropdown pick `Extension Tests`.
+* Press `F5` to run the tests in a new window with your extension loaded.
+* See the output of the test result in the debug console.
+* Make changes to `src/test/suite/extension.test.ts` or create new test files inside the `test/suite` folder.
+  * The provided test runner will only consider files matching the name pattern `**.test.ts`.
+  * You can create folders inside the `test` folder to structure your tests any way you want.
+
+## Go further
+
+* Reduce the extension size and improve the startup time by [bundling your extension](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
+* [Publish your extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) on the VS Code extension marketplace.
+* Automate builds by setting up [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
+
 
 \!\[feature X\]\(images/feature-x.png\)
 
 > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
