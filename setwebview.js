@@ -50,9 +50,10 @@ const startFileMonitoring = () => {
   console.log(`Monitoring changes in ${sourceDirectory}...`);
   fs.watch(sourceDirectory, { recursive: true }, handleFileChange);
 };
-
-// Run initial read and write
-initialReadAndWrite();
-
-// Start monitoring file changes after the initial read and write
-startFileMonitoring();
+setTimeout(() => {
+  // Run initial read and write
+  initialReadAndWrite();
+  
+  // Start monitoring file changes after the initial read and write
+  startFileMonitoring();
+}, 2000);
