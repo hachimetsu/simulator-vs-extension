@@ -27,8 +27,8 @@ export default class PanelProvider implements vscode.WebviewViewProvider {
         if(this._test) {webview.html = `<div>title: ${this._title ? this._title : 'Extension Webview'} working !</div>`;}
         else {webview.html = this.renderHTML({
                 cspSource: webview.cspSource,
-                scriptUri: webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', "webview", "assets", 'index-UbQphSoP.js')),
-                styleUri: webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media',"webview", "assets", 'index-g71WkpGn.css'))
+                scriptUri: webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', "webview", 'main.js')),
+                styleUri: webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media',"webview", 'style.css'))
         });}
     }
     protected renderHTML(args: RenderHTML) {
