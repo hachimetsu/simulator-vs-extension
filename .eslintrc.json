@@ -1,14 +1,14 @@
 {
     "root": true,
     "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "@typescript-eslint"
-    ],
+    "plugins": ["@typescript-eslint", "react-refresh"],
+    "ignorePatterns": ["out", "dist", "public", "media", "**/*.d.ts"],
+    "extends": ["plugin:react-hooks/recommended"],
     "rules": {
+        "react-refresh/only-export-components": [
+            "warn",
+            { "allowConstantExport": true }
+        ],
         "@typescript-eslint/naming-convention": [
             "warn",
             {
@@ -22,9 +22,8 @@
         "no-throw-literal": "warn",
         "semi": "off"
     },
-    "ignorePatterns": [
-        "out",
-        "dist",
-        "**/*.d.ts"
-    ]
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    }
 }

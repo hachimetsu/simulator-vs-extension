@@ -7,7 +7,7 @@ export function activate(context: vscode.ExtensionContext) {
 	subscriptions.push(vscode.commands.registerCommand('simulator.helloWorld', () => {vscode.window.showInformationMessage('Hello World from c code simulator!');}));
 	const panelProvider = new TerminalProvider(extensionUri);
 	subscriptions.push(vscode.window.registerWebviewViewProvider('simulator.terminal', panelProvider));
-	panelProvider._test = true;
+	// panelProvider._test = true;
 	subscriptions.push(vscode.commands.registerCommand('simulator.runCode', () => {
 		const activeEditor = vscode.window.activeTextEditor;
 		if (activeEditor && activeEditor.document.languageId === 'c') {

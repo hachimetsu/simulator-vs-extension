@@ -1,0 +1,18 @@
+module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  plugins: ['react-refresh'],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  env: { browser: true, es2020: true },
+  rules: {
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    '',
+  ],
+}

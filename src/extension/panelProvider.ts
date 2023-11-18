@@ -9,7 +9,10 @@ export default class PanelProvider implements vscode.WebviewViewProvider {
     protected _title?: string;
     protected _webviewView?: vscode.WebviewView;
     public _test: boolean;
-    constructor(protected readonly _extensionUri: vscode.Uri){this._test = false;}
+    constructor(protected readonly _extensionUri: vscode.Uri){
+        this._test = false;
+        this._title = "Extension";
+    }
     public resolveWebviewView(
         _webviewView: vscode.WebviewView,
         _context: vscode.WebviewViewResolveContext<unknown>,
@@ -19,13 +22,13 @@ export default class PanelProvider implements vscode.WebviewViewProvider {
         const webview = this._webviewView.webview;
         webview.options = {
             enableScripts: true,
-            localResourceRoots: [vscode.Uri.joinPath(this._extensionUri, 'public')]
+            localResourceRoots: [vscode.Uri.joinPath(this._extensionUri, 'media')]
         };
         if(this._test) {webview.html = `<div>title: ${this._title ? this._title : 'Extension Webview'} working !</div>`;}
         else {webview.html = this.renderHTML({
                 cspSource: webview.cspSource,
-                scriptUri: webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'public', 'main.js')),
-                styleUri: webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'public', 'style.css'))
+                scriptUri: webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', "webview", "assets", 'index-UbQphSoP.js')),
+                styleUri: webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media',"webview", "assets", 'index-g71WkpGn.css'))
         });}
     }
     protected renderHTML(args: RenderHTML) {
@@ -35,8 +38,8 @@ export default class PanelProvider implements vscode.WebviewViewProvider {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${args.cspSource ? args.cspSource : "none"}; script-src 'nonce-${nonce}';">
-            <title>${this._title ? this._title : 'Extension'}</title>
+            <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${args.cspSource}; script-src 'nonce-${nonce}';">
+            <title>${this._title}</title>
             <link rel="stylesheet" href="${args.styleUri ? args.styleUri : '#'}">
         </head>
         <body>
