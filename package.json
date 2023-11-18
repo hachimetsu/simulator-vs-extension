@@ -39,10 +39,10 @@
     }
   },
   "scripts": {
-    "build": "webpack & vite build",
+    "build": "vite build & webpack",
     "build:ex": "webpack",
     "build:web": "vite build",
-    "watch": "webpack --watch & vite build --watch",
+    "watch": "vite build --watch & webpack --watch",
     "watch:ex": "webpack --watch",
     "watch:web": "vite build --watch",
     "lint": "eslint src --ext ts, tsx --report-unused-disable-directives --max-warnings 0",

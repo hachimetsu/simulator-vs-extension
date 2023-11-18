@@ -1,29 +1,37 @@
-# Welcome to your VS Code Extension
+# Welcome to My VS Code Extension Repo
 
-## What's in the folder
+## What's Here
 
-* This folder contains all of the files necessary for your extension.
-* `package.json` - this is the manifest file in which you declare your extension and command.
-  * The sample plugin registers a command and defines its title and command name. With this information VS Code can show the command in the command palette. It doesn’t yet need to load the plugin.
-* `src/extension.ts` - this is the main file where you will provide the implementation of your command.
-  * The file exports one function, `activate`, which is called the very first time your extension is activated (in this case by executing the command). Inside the `activate` function we call `registerCommand`.
-  * We pass the function containing the implementation of the command as the second parameter to `registerCommand`.
+* VS Code Extension: `Simulator`
+* `Simulator` - Mimic Output of code manly C for now into virtual Terminal
+  * Extension Provite option as `Mimic Output` in `Context Menu` of VS.
+* `src` - main folder
+  * contain 2 folders as
+    * `extension`: main.ts file of extension
+    * `webview`: main.tsx file of webview
+  * `webview` - use `React` + `Tailwind`
+* `extension` is build by `webpack`
+* and `webview` is build by `Vite`
+* `media` folder contains `assets` which will be use by `extension` and out file of webview as `main.js`+`style.css`
 
 ## Setup
 
-* install the recommended extensions (amodio.tsl-problem-matcher and dbaeumer.vscode-eslint)
+* Run Following Commands to start
+* `npm i` : install packages
+* `npm run build` : generate `dist` for `extension` and `media/webview` for webview
 
 
 ## Get up and running straight away
 
 * Press `F5` to open a new window with your extension loaded.
-* Run your command from the command palette by pressing (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and typing `Hello World`.
-* Set breakpoints in your code inside `src/extension.ts` to debug your extension.
+* Run your command from the command palette by pressing (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and typing `Simulator`.
+* You will found all avialable command as `Simulator` with `prefix` in `palette`
+* Set breakpoints in your code inside `src/extension/main.ts` to debug your extension.
 * Find output from your extension in the debug console.
 
 ## Make changes
-
-* You can relaunch the extension from the debug toolbar after changing code in `src/extension.ts`.
+* for web view use `src/webview/App.tsx` and `Tailwind` or `src/webview/Style.css` 
+* You can relaunch the extension from the debug toolbar after changing code in `src/extension/main.ts`.
 * You can also reload (`Ctrl+R` or `Cmd+R` on Mac) the VS Code window with your extension to load your changes.
 
 
