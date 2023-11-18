@@ -11,7 +11,7 @@
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
-   "contributes": {
+  "contributes": {
     "commands": [
       {
         "command": "simulator.helloWorld",
@@ -29,7 +29,8 @@
     },
     "views": {
       "terminalContainer": [
-        { "name": "",
+        {
+          "name": "",
           "type": "webview",
           "id": "simulator.terminal",
           "contextualTitle": "terminal"
@@ -38,47 +39,45 @@
     }
   },
   "scripts": {
-    "build": "webpack . & vite build",
+    "build": "webpack & vite build",
+    "build:ex": "webpack",
+    "build:web": "vite build",
     "watch": "webpack --watch & vite build --watch",
+    "watch:ex": "webpack --watch",
+    "watch:web": "vite build --watch",
     "lint": "eslint src --ext ts, tsx --report-unused-disable-directives --max-warnings 0",
     "vscode:prepublish": "npm run package",
-
-    "compile": "webpack",
     "package": "webpack --mode production --devtool hidden-source-map",
-
     "webview": "vite",
     "preview": "vite preview",
-    "set:webview": "node ./setwebview.js",
-
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
-
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.3",
     "@types/node": "18.x",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
     "@types/vscode": "^1.84.0",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
+    "@vitejs/plugin-react": "^4.2.0",
     "@vscode/test-electron": "^2.3.6",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.52.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
     "glob": "^10.3.10",
     "mocha": "^10.2.0",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
+    "vite": "^5.0.0",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "@vitejs/plugin-react": "^4.2.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.4",
-    "vite": "^5.0.0"
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "react": "^18.2.0",
