@@ -38,20 +38,23 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run package",
-    "compile": "webpack",
+    "build": "webpack . & vite build",
     "watch": "webpack --watch & vite build --watch",
+    "lint": "eslint src --ext ts, tsx --report-unused-disable-directives --max-warnings 0",
+    "vscode:prepublish": "npm run package",
+
+    "compile": "webpack",
     "package": "webpack --mode production --devtool hidden-source-map",
+
+    "webview": "vite",
+    "preview": "vite preview",
+    "set:webview": "node ./setwebview.js",
+
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
+
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint:webview": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "watch:out": "node ./setwebview.js"
+    "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.3",
